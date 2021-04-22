@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block current_app_content %}
+    <div class="container" style="margin-top:40px">
+        <div class="col-md-3">
+            <ul class="list-group">
+                {% for a in edition %}
+                    <li class="list-group-item"><a href="{{ a.url }}"><i class="glyphicon glyphicon-play"></i> {{ a.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="right-content-bg">
+                <h1>MySQL Editions</h1>
+                <p>MySQL is the world's most popular open source database. Whether you are a fast growing web property,
+                    technology ISV or large enterprise, MySQL can cost-effectively help you deliver high performance,
+                    scalable database applications.</p>
+                <ul>
+                    <li><a href="/products/standard">MySQL Standard Edition</a></li>
+                    <li><a href="/products/enterprise">MySQL Enterprise Edition</a></li>
+                    <li><a href="/products/cluster">MySQL Cluster Carrier Grade Edition</a></li>
+                </ul>
+                 <img src="{{ url_for('static', filename='img/products.png') }}">
+            </div>
+        </div>
+    </div>
+{% endblock %}
